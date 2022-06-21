@@ -15,8 +15,12 @@ function Character(props){
     return(
         <div>
             <h3>{id}</h3>
-
-
-        </div>
+            <h4>{name}</h4>
+            <h5>{status}</h5>
+            <h5>{species}</h5>
+            <h5>{gender}</h5>
+            <img src ={image} alt =""/>
+                    </div>
     )
 }
+
