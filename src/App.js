@@ -1,9 +1,9 @@
-import Users from "./components/users/Users";
+import Flights from "./components/flights/Flights";
 
 export default function App(){
  return(<div>
-<Users/>
 
+<Flights/>
 
  </div>)
 }
