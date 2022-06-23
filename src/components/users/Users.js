@@ -23,7 +23,6 @@ const chosenUser = (item) => {
             <h2>Users</h2>
             {users.map((user, index) => <User key={index} item = {user} chosenUser={chosenUser}/> )}
 
-
         </div>);
 }
 

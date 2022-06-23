@@ -4,5 +4,5 @@ export default function User({item, chosenUser}) {
         {item.id} {item.name}
     <button onClick={ ()=> {chosenUser(item);}}> user details</button>
 
-    </div>      );
+    </div>);
 }
