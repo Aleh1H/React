@@ -1,11 +1,37 @@
-import React from 'react';
+import Users from "./components/users/Users";
+import {useState} from "react";
+import {getUserPosts} from "./services";
 
-const App = () => {
+
+export default function App() {
+
+    let [posts, setPosts] = useState([])
+    const elevate = (id) => {
+        getUserPosts(id).then(({data}) => setPosts([...data]));
+    }
+
     return (
         <div>
-          App
-        </div>
-    );
-};
+            <Users/>
+            <h2> user posts</h2>
+            {
+                posts.map(value => <div> {value.title}</div>)
+            }
 
-export default App;
+            <Users elevate={elevate}/>
+            <posts posts={posts}/>
+
+        </div>);
+}
+
+
+
+
+
+
+
+
+
+
+
+
