@@ -1,37 +1,23 @@
 import Users from "./components/users/Users";
 import {useState} from "react";
-import {getUserPosts} from "./services";
-
+import {getUserPosts} from "./services/userservice";
 
 export default function App() {
 
-    let [posts, setPosts] = useState([])
-    const elevate = (id) => {
-        getUserPosts(id).then(({data}) => setPosts([...data]));
+    let[posts, setPosts] = useState([]);
+    const getUserId = (id) => {
+getUserPosts(id).then(({data}) => setPosts([...data]))
     }
 
     return (
         <div>
-            <Users/>
-            <h2> user posts</h2>
+            <h2>posts of chosen user</h2>
             {
-                posts.map(value => <div> {value.title}</div>)
+                posts.map(value => <div>{value.body}</div>)
             }
-
-            <Users elevate={elevate}/>
-            <posts posts={posts}/>
-
+            <hr/>
+            <br/>
+            <hr/>
+            <Users getUserId={getUserId}/>
         </div>);
 }
-
-
-
-
-
-
-
-
-
-
-
-
