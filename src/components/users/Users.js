@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getUsers} from "../../services/userservice";
+import {getUsers} from "../../services";
 import User from "../user/User";
 
 export default function Users({getUserId}) {
