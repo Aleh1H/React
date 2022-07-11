@@ -1,16 +1,15 @@
-import ApiService from "../api.services/api.service";
 import {Outlet} from 'react-router-dom';
 
 import {useEffect, useState} from "react";
 import Commentscomponent from "../components/Commentscomponent";
+import {getComments} from "../api.services/api.service";
 
 export default function Comments() {
 
-    let apiService = new ApiService('comments');
     let[comments, setComments] = useState([]);
 
     useEffect(() => {
-        apiService.getAllData().then(value => setComments(value))
+       getComments().then(value => setComments(value))
     },[])
     return (
         <div>

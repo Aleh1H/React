@@ -1,14 +1,14 @@
 import {useEffect, useState} from "react";
 
-import ApiService from "../api.services/api.service";
 import Todoscomponet from "../components/Todoscomponet";
+import {getTodos} from "../api.services/api.service";
 
 export default function To_dos() {
-    let apiService = new ApiService('todos');
+
     let [todos, setTodos] = useState([])
 
     useEffect( () => {
-apiService.getAllData().then(value => setTodos(value))
+getTodos().then(value => setTodos(value))
     }, [])
 
     return (
